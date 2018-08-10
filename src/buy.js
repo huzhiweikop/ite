@@ -1,19 +1,12 @@
-var config = {
-    amount: 0.5,  // EOS数量, 每笔买入0.5 EOS
-    account_name: "huzhiweikop1",  // 替换你自己的账号名
-    wallet_name: "huzhiweikop1",  // 钱包名，默认default
-    password: "", // 钱包密码
+const config = {
+    amount: 50,
+    account_name: "huzhiweikop1",
+    // contract_name:"iteblackhole"
+    contract_name:"itedeathstar"
 }
 
-var EOS = require('eosjs');
-var shell = require('shelljs');
+const EOS = require('eosjs');
+const shell = require('shelljs');
 
-var eosClient = EOS({
-    broadcast: true,
-    sign: true,
-    chainId: "aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
-    httpEndpoint: "http://api.eosnewyork.io:80"
-})
-
-var buycmd = `cleos -u http://api.eosnewyork.io:80 transfer ${config.account_name} iteblackhole "${config.amount} EOS" "buy" -p ${config.account_name} `
+const buycmd = `~/eos/build/programs/cleos/cleos -u http://api.eosnewyork.io:80 transfer ${config.account_name} ${config.contract_name} "${config.amount} EOS" "buy" -p ${config.account_name} `
 shell.exec(buycmd);
