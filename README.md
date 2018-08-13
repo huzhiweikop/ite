@@ -15,7 +15,7 @@ npm install
 
 ```
 
-node buy_ite.js
+node buy
 
 ```
 
@@ -23,7 +23,7 @@ node buy_ite.js
 
 ```
 
-node sell_ite.js 参数(当时价格大于参数)
+node sell <价格>
 
 ```
 
@@ -31,6 +31,14 @@ node sell_ite.js 参数(当时价格大于参数)
 
 ```
 
-node get_ite_info.js
+node getInfo
+
+```
+
+## 自动低吸高抛
+
+```
+
+node auto <账号> <低吸价格> <高抛价格>
 
 ```
