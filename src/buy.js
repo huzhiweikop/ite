@@ -28,7 +28,7 @@ var buy = function (account, amount) {
 }
 
 var account_list = config.account_list
-shell.exec(unlock_wallet_cmd)
+
 
 // 8月11下午三点
 var buy_all = function() {
@@ -37,6 +37,7 @@ var buy_all = function() {
     logger.error('梭哈时间还没到');
     return
   }
+  shell.exec(unlock_wallet_cmd)
   for (let index = 0; index < account_list.length; index++) {
     buy(account_list[index], config.amount)
   }
